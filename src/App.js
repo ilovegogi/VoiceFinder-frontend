@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './components/Home';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import AuthService from './components/AuthService';
 import Navbar from './Navbar';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -43,7 +44,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/" element={currentUser ? <HomePage currentUser={currentUser} /> : <Navigate replace to="/login" />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
 

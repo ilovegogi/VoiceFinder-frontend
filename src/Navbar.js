@@ -20,7 +20,8 @@ const Navbar = ({ currentUser, onLogout }) => {
           <span style={{ marginRight: '20px' }}>
             Welcome, {currentUser.username}!
           </span>
-          <button onClick={handleLogout} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>Logout</button>
+          <button onClick={handleLogout} style={{ marginRight: '10px', background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>Logout</button>
+          <Link to="/profile" style={{ textDecoration: 'none', color: 'white' }}>Profile</Link>
         </div>
       ) : (
         <div>
