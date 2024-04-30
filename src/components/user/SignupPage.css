@@ -1,0 +1,43 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
+  width: 300px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background-color: #4a67d6;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.admin-checkbox {
+  margin-top: 10px;
+}
+
+/* 반응형 디자인 추가 */
+@media (max-width: 600px) {
+  .input-field {
+    width: 80%;
+  }
+}

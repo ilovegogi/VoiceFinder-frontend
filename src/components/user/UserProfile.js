@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import apiClient from './apiClient';
+import apiClient from '../../apiClient';
+import './UserProfile.css';  // Import the CSS file
 
-
-function UserProfile(currentUser) {
+function UserProfile({ currentUser }) {
   const [profile, setProfile] = useState(null);
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
@@ -57,13 +57,13 @@ function UserProfile(currentUser) {
 
       await apiClient.put('/api/users/profile', data, {
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
         },
       });
       alert('프로필이 성공적으로 업데이트되었습니다.');
       setEditMode(false);
-      window.location.reload(); // 업데이트 후 페이지 새로고침 or 다른 방법으로 UI 업데이트
+      window.location.reload();
     } catch (error) {
       console.error('프로필 업데이트 실패', error);
       alert('프로필 업데이트에 실패했습니다.');
@@ -71,30 +71,32 @@ function UserProfile(currentUser) {
   };
 
   return (
-    <div>
-      <button onClick={handleEditProfileToggle}>{editMode ? '취소' : '프로필 수정'}</button>
+    <div className="profile-container">
+      <button onClick={handleEditProfileToggle} className="edit-toggle">{editMode ? '취소' : '프로필 수정'}</button>
 
       {editMode ? (
-        <form onSubmit={handleProfileUpdate}>
-          <input type="password" name="currentPassword" placeholder="현재 비밀번호" onChange={handleChange} required />
+        <form onSubmit={handleProfileUpdate} className="profile-form">
+          <label for='username'>이름</label>
+          <input type="text" id="username" name="username" placeholder="이름" value={formData.username} onChange={handleChange} />
+          {/* <input type="text" name="gender" placeholder="성별" value={formData.gender} onChange={handleChange} /> */}
+          <label for='image'>프로필 이미지</label>
+          <input type="file" id="image" name="image" onChange={handleFileChange} />
+          {previewImage && <img src={previewImage} alt="Preview" className="preview-image" />}
           <input type="password" name="newPassword" placeholder="새 비밀번호 (선택사항)" onChange={handleChange} />
-          <input type="text" name="username" placeholder="이름" value={formData.username} onChange={handleChange} />
-          <input type="text" name="gender" placeholder="성별" value={formData.gender} onChange={handleChange} />
-          <input type="file" name="image" onChange={handleFileChange} />
-          {previewImage && <img src={previewImage} alt="Preview" style={{ width: '100px', height: '100px' }} />}
+          <input type="password" name="currentPassword" placeholder="현재 비밀번호 (필수사항)" onChange={handleChange} required />
           <button type="submit">저장</button>
         </form>
       ) : profile ? (
-        <>
-          {profile.imageUrl && <img src={profile.imageUrl} alt="프로필 이미지" style={{ width: '100px', height: '100px' }} />}
-          <div>
+        <div className="profile-info">
+          {profile.imageUrl && <img src={profile.imageUrl} alt="프로필 이미지" className="profile-image" />}
+          <div className="profile-details">
             <p>이름: {profile.username}</p>
             <p>이메일: {profile.email}</p>
-            <p>성별: {profile.gender}</p>
+            {/* <p>성별: {profile.gender}</p>
             <p>생일: {profile.birthDate}</p>
-            <p>역할: {profile.role}</p>
+            <p>역할: {profile.role}</p> */}
           </div>
-        </>
+        </div>
       ) : (
         <p>프로필 정보를 불러오는 중...</p>
       )}

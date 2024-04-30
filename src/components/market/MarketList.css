@@ -1,0 +1,59 @@
+.market-list-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.market-list-container form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.market-list-container input[type="text"],
+.market-list-container select {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.market-list-container button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.market-list-container button:hover {
+  background-color: #0056b3;
+}
+
+.market-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.market-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.market-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.market-card div {
+  font-size: 16px;
+  font-weight: bold;
+}

@@ -1,0 +1,17 @@
+.market-detail {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.market-detail h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.market-detail img {
+  width: 50%;
+  margin-top: 10px;
+  border-radius: 5px;
+}

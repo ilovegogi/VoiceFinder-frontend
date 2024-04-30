@@ -19,10 +19,11 @@ const HomePage = ({currentUser}) => {
     <div className="container">
       <Link to="/markets/1">
         <header className="header">
+          <h1>Biz Page Comming Soon..</h1>
         </header>
       </Link>
       <main className="main">
-        <p className="intro">{currentUser}님과 딱 맞는 캠페인을 추천해드려요</p>
+        <p className="intro">{currentUser}님 환영합니다.</p>
         <div className='recommend-campaign-container'>
           {Array.from(recommendedCampaigns).map((campaign, index) => (
             <div key={index} className='recommend-campaign'>

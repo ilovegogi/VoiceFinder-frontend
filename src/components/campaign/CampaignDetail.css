@@ -1,0 +1,30 @@
+.campaign-detail {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.campaign-detail h1 {
+  margin-bottom: 10px;
+}
+
+.campaign-detail h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.campaign-detail p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.campaign-detail img {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}

@@ -1,0 +1,67 @@
+.campaign-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.campaign-form-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.campaign-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campaign-form-container input[type="text"],
+.campaign-form-container textarea,
+.campaign-form-container select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.campaign-form-container select[multiple] {
+  height: auto;
+  min-height: 100px;
+}
+
+.campaign-form-container button {
+  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.campaign-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.campaign-form-container label {
+  cursor: pointer;
+}
+
+.campaign-form-container .file-upload-btn {
+  background-color: #28a745;
+  border-color: #28a745;
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  color: white;
+  margin-top: 10px;
+}
+
+.campaign-form-container .file-upload-btn:hover {
+  background-color: #218838;
+}
